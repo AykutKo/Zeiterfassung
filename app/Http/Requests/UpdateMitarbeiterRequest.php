@@ -13,7 +13,7 @@ class UpdateMitarbeiterRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,14 @@ class UpdateMitarbeiterRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'firstname',
+            'lastname',
+            'email',
+            'birthday',
+            'address',
+            'plz',
+            'city',
+            'phone',
         ];
     }
 }

@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreMitarbeiterRequest extends FormRequest
+class StoreZeiterfassungRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,14 +24,8 @@ class StoreMitarbeiterRequest extends FormRequest
     public function rules()
     {
         return [
-            'firstname',
-            'lastname',
-            'email',
-            'birthday',
-            'address',
-            'plz',
-            'city',
-            'phone',
+            'startDate',
+            'endDate'
         ];
     }
 }

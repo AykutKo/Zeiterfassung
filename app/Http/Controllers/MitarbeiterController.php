@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Mitarbeiter;
 use App\Http\Requests\StoreMitarbeiterRequest;
 use App\Http\Requests\UpdateMitarbeiterRequest;
 use App\Models\User;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Testing\Fluent\Concerns\Has;
 
 class MitarbeiterController extends Controller
 {
@@ -26,9 +27,11 @@ class MitarbeiterController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(User $mitarbeiter)
     {
-       return view('mitarbeiter.create');
+       return view('mitarbeiter.create',[
+           'mitarbeiter' => $mitarbeiter
+       ]);
     }
 
     /**
@@ -39,13 +42,19 @@ class MitarbeiterController extends Controller
      */
     public function store(StoreMitarbeiterRequest $request)
     {
-        //
+        $data = $request->validated();
+
+        $data['password']= Hash::make('password');
+        User::create($data);
+
+        return redirect()->route('mitarbeiter.index');
+
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Mitarbeiter  $mitarbeiter
+     * @param  \App\Models\User  $mitarbeiter
      * @return \Illuminate\Http\Response
      */
     public function show(Mitarbeiter $mitarbeiter)
@@ -59,31 +68,38 @@ class MitarbeiterController extends Controller
      * @param  \App\Models\Mitarbeiter  $mitarbeiter
      * @return \Illuminate\Http\Response
      */
-    public function edit(Mitarbeiter $mitarbeiter)
+    public function edit(User $mitarbeiter)
     {
-        //
+       return view('mitarbeiter.edit',[
+           'mitarbeiter' => $mitarbeiter
+       ]);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \App\Http\Requests\UpdateMitarbeiterRequest  $request
-     * @param  \App\Models\Mitarbeiter  $mitarbeiter
+     * @param  \App\Models\User  $mitarbeiter
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateMitarbeiterRequest $request, Mitarbeiter $mitarbeiter)
+    public function update(UpdateMitarbeiterRequest $request, User $mitarbeiter)
     {
-        //
+        $data = $request->validated();
+
+        $mitarbeiter->update($data);
+
+        return redirect()->route('mitarbeiter.index');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Mitarbeiter  $mitarbeiter
+     * @param  \App\Models\User  $mitarbeiter
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Mitarbeiter $mitarbeiter)
+    public function destroy(User $mitarbeiter)
     {
-        //
-    }
+        $mitarbeiter->delete();
+        return redirect()->route('mitarbeiter.index')
+;    }
 }

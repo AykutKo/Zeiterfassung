@@ -45,12 +45,12 @@ return [
     |
     */
 
-    'logo' => '<b>Admin</b>LTE',
-    'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
-    'logo_img_class' => 'brand-image img-circle elevation-3',
+    'logo' => '<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Zeiterfassung</b>',
+    'logo_img' => 'vendor/adminlte/dist/img/brand-logo.png',
+    'logo_img_class' => 'brand-image img-circle elevation-5',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
-    'logo_img_alt' => 'AdminLTE',
+    'logo_img_alt' => 'Zois',
 
     /*
     |--------------------------------------------------------------------------
@@ -235,13 +235,7 @@ return [
             'url'  => 'admin/blog',
             'can'  => 'manage-blog',
         ],
-        [
-            'text'        => 'pages',
-            'url'         => 'admin/pages',
-            'icon'        => 'far fa-fw fa-file',
-            'label'       => 4,
-            'label_color' => 'success',
-        ],
+
         ['header' => 'account_settings'],
         [
             'text' => 'Mitarbeiter',
@@ -250,7 +244,7 @@ return [
         ],
         [
             'text' => 'Zeiterfassung',
-            'url'  => 'admin/settings',
+            'url'  => 'zeiterfassung/',
             'icon' => 'fas fa-fw fa-clock',
         ],
 

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\MitarbeiterController;
+use App\Http\Controllers\ZeiterfassungController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,3 +23,4 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::resource('mitarbeiter', MitarbeiterController::class);
+Route::resource('zeiterfassung', ZeiterfassungController::class);

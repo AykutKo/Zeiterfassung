@@ -24,7 +24,7 @@
                                 <table class="table table-bordered text-nowrap border-bottom" id="responsive-datatable">
                                     <thead>
                                     <tr>
-                                        <th class="wd-15p border-bottom-0">Personalnummer</th>
+                                        <th class="wd-15p border-bottom-0">Personalnr</th>
                                         <th class="wd-15p border-bottom-0">Vorname</th>
                                         <th class="wd-15p border-bottom-0">Nachname</th>
                                         <th class="wd-20p border-bottom-0">Geburtsdatum</th>
@@ -50,6 +50,8 @@
                                             <td>{{ $mitarbeiter->phone }}</td>
                                             <td class="text-center">
                                                 <div class="btn-group">
+                                                    <a href="{{ route('mitarbeiter.edit', $mitarbeiter) }}" class="btn btn-sm btn-warning"><i class="fa fa-pencil-alt"></i></a>
+                                                    <a href="javascript:deleteResource({{ route('mitarbeiter.destroy', $mitarbeiter,false) }})" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></a>
                                                     <a href="{{ route('mitarbeiter.show', $mitarbeiter) }}" class="btn btn-sm btn-primary"><i class="fa fa-search"></i></a>
                                                 </div>
                                             </td>
