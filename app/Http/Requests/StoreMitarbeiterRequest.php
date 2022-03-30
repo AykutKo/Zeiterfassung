@@ -24,14 +24,15 @@ class StoreMitarbeiterRequest extends FormRequest
     public function rules()
     {
         return [
-            'firstname',
-            'lastname',
-            'email',
-            'birthday',
-            'address',
-            'plz',
-            'city',
-            'phone',
+            'firstname'=>['required', 'string'],
+            'lastname'=>['required', 'string'],
+            'email'=>['required', 'string'],
+            'birthday'=>['required', 'date'],
+            'address'=>['required', 'string'],
+            'plz'=>['required', 'integer'],
+            'city'=>['required', 'string'],
+            'phone'=>['required', 'string'],
+            'password'=>['required', 'string']
         ];
     }
 }

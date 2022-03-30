@@ -237,12 +237,15 @@ return [
         ],
 
         ['header' => 'account_settings'],
+
         [
             'text' => 'Mitarbeiter',
             'url'  => 'mitarbeiter/',
             'icon' => 'fas fa-fw fa-user',
+            'can' => 'test'
         ],
-        [
+
+    [
             'text' => 'Zeiterfassung',
             'url'  => 'zeiterfassung/',
             'icon' => 'fas fa-fw fa-clock',

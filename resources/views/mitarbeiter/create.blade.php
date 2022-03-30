@@ -7,6 +7,12 @@
 @stop
 
 @section('content')
+    @if ($errors->any())
+        @foreach ($errors->all() as $error)
+            <div>{{$error}}</div>
+        @endforeach
+    @endif
+    @hasrole('admin')
     <section class="content">
         <div class="row">
             <div class="col-md-12 col-sm-12 col-lg-12 my-3">
@@ -106,6 +112,18 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="form-group {{ $errors->first('phone', 'has-error') }}">
+                                    <div class="row">
+                                        <label for="phone" class="col-sm-2 control-label">Telefonnummer</label>
+                                        <div class="col-sm-10">
+                                            <input id="phone" name="phone" placeholder="Telefonnummer" type="text"
+                                                   class="form-control required phone"
+                                                   value="{{$mitarbeiter->phone}}"/>
+                                            {!! $errors->first('phone', '<span class="help-block">:message</span>')
+                                            !!}
+                                        </div>
+                                    </div>
+                                </div>
 
                                 <div class="form-group {{ $errors->first('password', 'has-error') }}">
                                     <div class="row">
@@ -143,4 +161,5 @@
         </div>
         <!--row end-->
     </section>
+@endhasrole
 @stop

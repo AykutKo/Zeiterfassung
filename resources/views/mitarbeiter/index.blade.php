@@ -42,7 +42,7 @@
                                             <td>{{ $mitarbeiter->id }}</td>
                                             <td>{{ $mitarbeiter->firstname }}</td>
                                             <td> {{$mitarbeiter->lastname}}</td>
-                                            <td> {{$mitarbeiter->birthday}}</td>
+                                            <td> {{$mitarbeiter->birthday->format('d.m.Y')}}</td>
                                             <td>{{ $mitarbeiter->address }}</td>
                                             <td>{{ $mitarbeiter->plz }}</td>
                                             <td>{{ $mitarbeiter->city }}</td>
@@ -51,7 +51,7 @@
                                             <td class="text-center">
                                                 <div class="btn-group">
                                                     <a href="{{ route('mitarbeiter.edit', $mitarbeiter) }}" class="btn btn-sm btn-warning"><i class="fa fa-pencil-alt"></i></a>
-                                                    <a href="javascript:deleteResource({{ route('mitarbeiter.destroy', $mitarbeiter,false) }})" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></a>
+                                                    <a href="javascript:deleteResource('{{ route('mitarbeiter.destroy', $mitarbeiter,false) }}')" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></a>
                                                     <a href="{{ route('mitarbeiter.show', $mitarbeiter) }}" class="btn btn-sm btn-primary"><i class="fa fa-search"></i></a>
                                                 </div>
                                             </td>
@@ -69,4 +69,5 @@
         <!-- CONTAINER CLOSED -->
 
     </div>
+    @include('delete-modal')
 @stop
