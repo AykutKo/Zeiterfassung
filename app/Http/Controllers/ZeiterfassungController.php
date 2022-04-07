@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Zeiterfassung;
 use App\Http\Requests\StoreZeiterfassungRequest;
 use App\Http\Requests\UpdateZeiterfassungRequest;
@@ -40,7 +41,12 @@ class ZeiterfassungController extends Controller
      */
     public function store(StoreZeiterfassungRequest $request)
     {
-        //
+        $data = $request->validated();
+
+        Zeiterfassung::create($data);
+
+        return redirect()->route('zeiterfassung.index');
+
     }
 
     /**
@@ -62,7 +68,9 @@ class ZeiterfassungController extends Controller
      */
     public function edit(Zeiterfassung $zeiterfassung)
     {
-        //
+        return view('zeiterfassung.edit',[
+            'zeiterfassung' => $zeiterfassung
+        ]);
     }
 
     /**
@@ -74,7 +82,11 @@ class ZeiterfassungController extends Controller
      */
     public function update(UpdateZeiterfassungRequest $request, Zeiterfassung $zeiterfassung)
     {
-        //
+        $data= $request->validated();
+
+        $zeiterfassung ->update($data);
+
+        return redirect()->route('zeiterfassung.index');
     }
 
     /**

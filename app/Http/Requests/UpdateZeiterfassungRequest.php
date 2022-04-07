@@ -24,8 +24,10 @@ class UpdateZeiterfassungRequest extends FormRequest
     public function rules()
     {
         return [
-            'startDate',
-            'endDate'
+            'startDate'=>['required', 'date'],
+            'endDate'=>['required', 'date'],
+            'taetigkeit'=>['required', 'string'],
+            'bemerkung'=>['required', 'string'],
         ];
     }
 }

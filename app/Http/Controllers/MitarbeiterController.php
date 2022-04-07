@@ -57,9 +57,11 @@ class MitarbeiterController extends Controller
      * @param  \App\Models\User  $mitarbeiter
      * @return \Illuminate\Http\Response
      */
-    public function show(Mitarbeiter $mitarbeiter)
+    public function show(User $mitarbeiter)
     {
-        //
+        return view('mitarbeiter.show',[
+            'mitarbeiter' => $mitarbeiter
+        ]);
     }
 
     /**

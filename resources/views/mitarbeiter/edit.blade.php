@@ -72,7 +72,7 @@
                                         <div class="col-sm-10">
                                             <input id="birthday" name="birthday" type="date"
                                                    class="form-control"
-                                                   data-date-format="YYYY-MM-DD" placeholder="yyyy-mm-dd" value="{{$mitarbeiter->birthday}}"/>
+                                                   data-date-format="YYYY-MM-DD" placeholder="yyyy-mm-dd" value="{{$mitarbeiter->birthday->format('Y-m-d')}}"/>
                                         </div>
                                         <span
                                             class="help-block">{{ $errors->first('birthday', ':message') }}</span>

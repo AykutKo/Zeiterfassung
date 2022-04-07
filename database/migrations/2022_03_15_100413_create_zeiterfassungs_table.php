@@ -17,6 +17,8 @@ return new class extends Migration
             $table->id();
             $table->dateTime('startDate');
             $table->dateTime('endDate');
+            $table->string('taetigkeit');
+            $table->longText('bemerkung');
             $table->timestamps();
         });
     }

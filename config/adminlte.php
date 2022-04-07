@@ -273,6 +273,11 @@ return [
                 ],
             ],
         ],
+        [
+            'text' => 'Abmelden',
+            'url' => '#',
+            'icon' => 'fas fa-fw fa-user-slash'
+        ],
         ['header' => 'labels'],
 
     ],

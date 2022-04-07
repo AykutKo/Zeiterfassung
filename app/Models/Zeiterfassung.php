@@ -9,13 +9,19 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
 class Zeiterfassung extends Model
 {
     use HasFactory;
+
     protected $fillable = [
-      'startDate',
-      'endDate'
+        'startDate',
+        'endDate',
+        'taetigkeit',
+        'bemerkung'
     ];
 
-
-    public function user():HasOne
+    protected $casts = [
+        'startDate' => 'datetime',
+        'endDate' => 'datetime'
+    ];
+    public function user(): HasOne
     {
         return $this->hasOne(User::class);
     }

@@ -24,23 +24,23 @@
                                 <table class="table table-bordered text-nowrap border-bottom" id="responsive-datatable">
                                     <thead>
                                     <tr>
-                                        <th class="wd-15p border-bottom-0">Personalnr</th>
+                                        <th class="wd-15p border-bottom-0">Täetigkeit</th>
                                         <th class="wd-15p border-bottom-0">Starten</th>
                                         <th class="wd-15p border-bottom-0">Enden</th>
+                                        <th class="wd-15p border-bottom-0">Bemerkung</th>
                                         <th class="wd-25p border-bottom-0 text-center">Aktion</th>
                                     </tr>
                                     </thead>
                                     <tbody>
                                     @foreach($zeiterfassungs as $zeiterfassung)
                                         <tr>
-                                            <td>{{ $zeiterfassung->id }}</td>
-                                            <td>{{ $zeiterfassung->startDate }}</td>
-                                            <td> {{$zeiterfassung->endDate}}</td>
+                                            <td>{{ $zeiterfassung->taetigkeit }}</td>
+                                            <td>{{ $zeiterfassung->startDate->format('d.m.Y H:i:s') }}</td>
+                                            <td> {{$zeiterfassung->endDate->format('d.m.Y H:i:s')}}</td>
+                                            <td>{{ $zeiterfassung->bemerkung }}</td>
                                             <td class="text-center">
                                                 <div class="btn-group">
-                                                    <a href="{{ route('mitarbeiter.edit', $zeiterfassung) }}" class="btn btn-sm btn-warning"><i class="fa fa-pencil-alt"></i></a>
-                                                    <a href="javascript:deleteResource({{ route('$zeiterfassung.destroy', $zeiterfassung,false) }})" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></a>
-                                                    <a href="{{ route('mitarbeiter.show', $zeiterfassung) }}" class="btn btn-sm btn-primary"><i class="fa fa-search"></i></a>
+                                                    <a href="{{ route('zeiterfassung.edit', $zeiterfassung) }}" class="btn btn-sm btn-warning"><i class="fa fa-pencil-alt"></i></a>
                                                 </div>
                                             </td>
                                         </tr>
