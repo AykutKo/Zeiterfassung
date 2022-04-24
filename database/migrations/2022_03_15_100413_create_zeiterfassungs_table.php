@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\User;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -15,10 +16,13 @@ return new class extends Migration
     {
         Schema::create('zeiterfassungs', function (Blueprint $table) {
             $table->id();
-            $table->dateTime('startDate');
-            $table->dateTime('endDate');
-            $table->string('taetigkeit');
-            $table->longText('bemerkung');
+            $table->dateTime('startDate')->nullable();
+            $table->dateTime('endDate')->nullable();
+            $table->dateTime('kommen')->nullable();
+            $table->dateTime('gehen')->nullable();
+            $table->string('taetigkeit')->nullable();
+            $table->longText('bemerkung')->nullable();
+            $table->foreignIdFor(User::class)->nullable()->constrained()->cascadeOnDelete();
             $table->timestamps();
         });
     }

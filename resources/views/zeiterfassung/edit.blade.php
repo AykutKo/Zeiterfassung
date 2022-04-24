@@ -43,8 +43,7 @@
                                     <label for=" startDate" class="col-sm-2 control-label">von</label>
                                     <div class="col-sm-10">
                                         <input id=" startDate" name=" startDate" type="datetime-local"
-                                               class="form-control"
-                                               data-date-format="YYYY-MM-DD"  placeholder="yyyy-mm-dd" value="{{$zeiterfassung->startDate->format('d.m.Y H:i:s')}}"/>
+                                               class="form-control" value="{{$zeiterfassung->startDate->format('Y-m-d')}}T{{ $zeiterfassung->startDate->format('H:i') }}"/>
                                     </div>
                                     <span
                                         class="help-block">{{ $errors->first(' startDate', ':message') }}</span>
@@ -55,11 +54,18 @@
                                     <label for="endDate" class="col-sm-2 control-label">bis</label>
                                     <div class="col-sm-10">
                                         <input id="endDate" name="endDate" type="datetime-local"
-                                               class="form-control"
-                                               data-date-format="YYYY-MM-DD" placeholder="yyyy-mm-dd" value="{{ $zeiterfassung->endDate->format('d.m.Y H:i:s')}}"/>
+                                               class="form-control" value="{{$zeiterfassung->endDate->format('Y-m-d')}}T{{ $zeiterfassung->endDate->format('H:i') }}"/>
                                     </div>
                                     <span
                                         class="help-block">{{ $errors->first('endDate', ':message') }}</span>
+                                </div>
+                            </div>
+                            <div class="form-group  {{ $errors->first('bemerkung', 'has-error') }}">
+                                <div class="row">
+                                    <label for="bemerkung" class="col-sm-2 control-label">Bemerkung</label>
+
+                                    <textarea id="bemerkung" name="bemerkung"
+                                              class="form-control" >{{$zeiterfassung->bemerkung}}</textarea>
                                 </div>
                             </div>
 

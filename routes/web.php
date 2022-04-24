@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ArbeitszeiterfassungsController;
 use App\Http\Controllers\MitarbeiterController;
 use App\Http\Controllers\ZeiterfassungController;
 use Illuminate\Support\Facades\Route;
@@ -26,4 +27,9 @@ Route::middleware('auth:web')->group(function () {
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
     Route::resource('mitarbeiter', MitarbeiterController::class);
     Route::resource('zeiterfassung', ZeiterfassungController::class);
+    Route::resource('arbeitszeiterfassung', ArbeitszeiterfassungsController::class);
+
+    Route::get('woechentlich', [\App\Http\Controllers\ChartController::class, 'weekly']);
+    Route::get('monatlich', [\App\Http\Controllers\ChartController::class, 'monthly']);
+    Route::get('jaehrlich', [\App\Http\Controllers\ChartController::class, 'yearly']);
 });

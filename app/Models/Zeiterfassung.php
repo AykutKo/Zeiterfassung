@@ -13,16 +13,21 @@ class Zeiterfassung extends Model
     protected $fillable = [
         'startDate',
         'endDate',
+        'kommen',
+        'gehen',
         'taetigkeit',
-        'bemerkung'
+        'bemerkung',
+        'user_id'
     ];
 
     protected $casts = [
         'startDate' => 'datetime',
-        'endDate' => 'datetime'
+        'endDate' => 'datetime',
+        'kommen' => 'datetime',
+        'gehen' => 'datetime',
     ];
-    public function user(): HasOne
+    public function user(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
-        return $this->hasOne(User::class);
+        return $this->belongsTo(User::class);
     }
 }

@@ -250,33 +250,33 @@ return [
             'url'  => 'zeiterfassung/',
             'icon' => 'fas fa-fw fa-clock',
         ],
+        [
+        'text' => 'Arbeitszeiterfassung',
+        'url'  => 'arbeitszeiterfassung/',
+        'icon' => 'fas fa-fw fa-clock',],
 
         [
             'text'    => 'Auswertungen',
             'icon'    => 'fas fa-fw fa-chart-line',
+            'can' => 'auswertung',
             'submenu' => [
                 [
                     'text' => 'Wochenauswertung',
-                    'url'  => '#',
+                    'url'  => 'woechentlich/',
                     'icon'    => 'fas fa-fw fa-chart-line',
                 ],
                 [
                     'text'    => 'Monatsauswertung',
-                    'url'     => '#',
+                    'url'     => 'monatlich',
                     'icon'    => 'fas fa-fw fa-chart-line',
 
                 ],
                 [
                     'text' => 'Jahresauswertung',
-                    'url'  => '#',
+                    'url'  => 'jaehrlich',
                     'icon'    => 'fas fa-fw fa-chart-line',
                 ],
             ],
-        ],
-        [
-            'text' => 'Abmelden',
-            'url' => '#',
-            'icon' => 'fas fa-fw fa-user-slash'
         ],
         ['header' => 'labels'],
 

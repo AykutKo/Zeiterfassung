@@ -16,8 +16,15 @@ class ZeiterfassungController extends Controller
      */
     public function index()
     {
+        $zeiterfassungen = Zeiterfassung::all()->whereNotNull('startDate');
+
+        if(!auth()->user()->hasRole(['admin', 'vertrieb']))
+        {
+            $zeiterfassungen = $zeiterfassungen->where('user_id', auth()->id());
+        }
+
         return view('zeiterfassung.index', [
-            'zeiterfassungs' => Zeiterfassung::all(),
+            'zeiterfassungs' => $zeiterfassungen,
         ]);
     }
 
@@ -42,7 +49,6 @@ class ZeiterfassungController extends Controller
     public function store(StoreZeiterfassungRequest $request)
     {
         $data = $request->validated();
-
         Zeiterfassung::create($data);
 
         return redirect()->route('zeiterfassung.index');

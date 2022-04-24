@@ -2,7 +2,12 @@
 
 namespace App\Providers;
 
+use App\Charts\MonthlyChart;
+use App\Charts\WeeklyChart;
+use App\Charts\YearlyChart;
 use Illuminate\Support\ServiceProvider;
+
+use ConsoleTVs\Charts\Registrar as Charts;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -21,8 +26,12 @@ class AppServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot()
+    public function boot(Charts $charts)
     {
-        //
+        $charts->register([
+            WeeklyChart::class,
+            MonthlyChart::class,
+            YearlyChart::class,
+        ]);
     }
 }

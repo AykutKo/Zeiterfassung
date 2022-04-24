@@ -22,14 +22,26 @@ class MitarbeiterSeeder extends Seeder
             'name' => 'admin',
             'guard_name' => 'web'
         ]);
-        Role::create([
-            'name' => 'writer',
+        $mitarbeiter = Role::create([
+            'name' => 'mitarbeiter',
+            'guard_name' => 'web'
+        ]);
+        $vertrieb = Role::create([
+            'name' => 'vertrieb',
             'guard_name' => 'web'
         ]);
 
         Permission::create(['name' => 'test', 'guard_name' => 'web']);
+        Permission::create(['name' => 'urlaub', 'guard_name' => 'web']);
+        Permission::create(['name' => 'auswertung', 'guard_name' => 'web']);
+        Permission::create(['name' => 'krankheit', 'guard_name' => 'web']);
 
         $admin->givePermissionTo('test');
+        $admin->givePermissionTo('urlaub');
+        $admin->givePermissionTo('auswertung');
+        $admin->givePermissionTo('krankheit');
+
+        $vertrieb->givePermissionTo('auswertung');
 
         $user = User::create([
             'firstname' =>'Aykut',

@@ -51,8 +51,8 @@ class User extends Authenticatable
         'birthday' => 'date'
     ];
 
-    public function zeiterfassung():BelongsTo
+    public function zeiterfassung(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
-        return $this->belongsTo(Zeiterfassung::class, 'zeiterfassung_id');
+        return $this->hasMany(Zeiterfassung::class);
     }
 }
