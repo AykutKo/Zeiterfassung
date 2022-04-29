@@ -124,6 +124,30 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="form-group  {{ $errors->first('urlaubstage', 'has-error') }}">
+                                    <div class="row">
+                                        <label for="urlaubstage" class="col-sm-2 control-label">Rest Urlaubstage </label>
+                                        <div class="col-sm-10">
+                                            <input id="urlaubstage" name="urlaubstage" placeholder="Rest Urlaubstage" type="number"
+                                                   class="form-control"
+                                                   value="{{$mitarbeiter->urlaubstage}}"/>
+                                        </div>
+                                        <span
+                                            class="help-block">{{ $errors->first('urlaubstage', ':message') }}</span>
+                                    </div>
+                                </div>
+                                <div class="form-group  {{ $errors->first('krankheitstage', 'has-error') }}">
+                                    <div class="row">
+                                        <label for="krankheitstage" class="col-sm-2 control-label">Krankheitstage </label>
+                                        <div class="col-sm-10">
+                                            <input id="krankheitstage" name="krankheitstage" placeholder="Krankheitstage" type="number"
+                                                   class="form-control"
+                                                   value="{{$mitarbeiter->krankheitstage}}"/>
+                                        </div>
+                                        <span
+                                            class="help-block">{{ $errors->first('krankheitstage', ':message') }}</span>
+                                    </div>
+                                </div>
 
                                 <div class="form-group {{ $errors->first('password', 'has-error') }}">
                                     <div class="row">
@@ -149,6 +173,42 @@
                                             {!! $errors->first('password_confirm', '<span
                                                 class="help-block">:message</span>') !!}
                                         </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="exampleRadios"
+                                                   id="exampleRadios1" value="option1" A>
+                                            <label class="form-check-label" for="exampleRadios1">
+                                                Personalabteilung
+                                            </label>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="exampleRadios"
+                                                   id="exampleRadios2" value="option1" >
+                                            <label class="form-check-label" for="exampleRadios2">
+                                                Vertrieb
+                                            </label>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="exampleRadios"
+                                                   id="exampleRadios3" value="option1" >
+                                            <label class="form-check-label" for="exampleRadios3">
+                                                Entwickler
+                                            </label>
+                                        </div>
+
                                     </div>
                                 </div>
                             </div>

@@ -32,6 +32,8 @@ class UpdateMitarbeiterRequest extends FormRequest
             'plz'=>['required', 'integer'],
             'city'=>['required', 'string'],
             'phone'=>['required', 'string'],
+            'urlaubstage'=>[ 'integer'],
+            'krankheitstage'=>[ 'integer'],
         ];
     }
 }

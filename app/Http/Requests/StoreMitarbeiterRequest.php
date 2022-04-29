@@ -32,7 +32,9 @@ class StoreMitarbeiterRequest extends FormRequest
             'plz'=>['required', 'integer'],
             'city'=>['required', 'string'],
             'phone'=>['required', 'string'],
-            'password'=>['required', 'string']
+            'password'=>['required', 'string'],
+            'urlaubstage'=>[ 'integer'],
+            'krankheitstage'=>[ 'integer'],
         ];
     }
 }

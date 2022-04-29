@@ -25,6 +25,8 @@ class UserFactory extends Factory
             'address' => $this->faker->address,
             'city' => $this->faker->city,
             'plz' => $this->faker->numberBetween(10000,99999),
+            'urlaubstage' => $this->faker->numberBetween(0,30),
+            'krankheitstage' => $this->faker->numberBetween(0,10),
             'phone' => $this->faker->phoneNumber,
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
             'remember_token' => Str::random(10),

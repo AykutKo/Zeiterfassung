@@ -29,6 +29,8 @@ class User extends Authenticatable
         'city',
         'password',
         'phone',
+        'urlaubstage',
+        'krankheitstage',
     ];
 
     /**

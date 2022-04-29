@@ -26,6 +26,8 @@ return new class extends Migration
             $table->string('city');
             $table->string('phone');
             $table->string('password');
+            $table->integer('urlaubstage')->nullable();
+            $table->integer('krankheitstage')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

@@ -52,6 +52,8 @@ class MitarbeiterSeeder extends Seeder
             'plz'=>'58511',
             'city'=>'Lüdenscheid',
             'phone'=>'017683076639',
+            'urlaubstage'=>'30',
+            'krankheitstage'=>'0',
             'password'=> Hash::make('password'),
         ]);
 

@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Mitarbeiter hinzufügen')
+@section('title', 'Neue Arbeitszeiten hinzufügen')
 
 @section('content_header')
     <h1>Neue Arbeitszeiten hinzufügen</h1>

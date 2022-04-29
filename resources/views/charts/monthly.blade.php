@@ -1,9 +1,9 @@
 @extends('adminlte::page')
 
-@section('title', 'Alle Zeiten')
+@section('title', 'Monatliche Auswertung')
 
 @section('content_header')
-    <h1>Alle Zeiten</h1>
+    <h1>Monatliche Auswertung</h1>
 @stop
 
 @section('content')

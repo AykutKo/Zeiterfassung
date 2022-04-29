@@ -1,9 +1,9 @@
 @extends('adminlte::page')
 
-@section('title', 'Alle Zeiten')
+@section('title', 'Alle Arbeitszeiten')
 
 @section('content_header')
-    <h1>Alle Zeiten</h1>
+    <h1>Alle Arbeitszeiten</h1>
 @stop
 
 @section('content')
@@ -17,7 +17,7 @@
             <div class="row row-sm">
                 <div class="col-lg-12">
                     <div class="card">
-                        <a href="{{ route('zeiterfassung.create') }}" class="float-right btn btn-primary import_btn">
+                        <a href="{{ route('arbeitszeiterfassung.create') }}" class="float-right btn btn-primary import_btn">
                             <i class="fa fa-plus fa-fw"></i>Neue Arbeitszeiten hinzufügen</a>
                         <div class="card-body">
                             <div class="table-responsive">

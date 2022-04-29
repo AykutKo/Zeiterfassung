@@ -1,9 +1,9 @@
 @extends('adminlte::page')
 
-@section('title', 'Alle Zeiten')
+@section('title', 'Alle Zeiten für Tätigkeiten')
 
 @section('content_header')
-    <h1>Alle Zeiten</h1>
+    <h1>Alle Zeiten für Tätigkeiten</h1>
 @stop
 
 @section('content')
@@ -24,7 +24,7 @@
                                 <table class="table table-bordered text-nowrap border-bottom" id="responsive-datatable">
                                     <thead>
                                     <tr>
-                                        <th class="wd-15p border-bottom-0">Täetigkeit</th>
+                                        <th class="wd-15p border-bottom-0">Tätigkeit</th>
                                         <th class="wd-15p border-bottom-0">Starten</th>
                                         <th class="wd-15p border-bottom-0">Enden</th>
                                         <th class="wd-15p border-bottom-0">Bemerkung</th>

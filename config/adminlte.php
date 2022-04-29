@@ -236,7 +236,6 @@ return [
             'can'  => 'manage-blog',
         ],
 
-        ['header' => 'account_settings'],
 
         [
             'text' => 'Mitarbeiter',
@@ -246,7 +245,7 @@ return [
         ],
 
     [
-            'text' => 'Zeiterfassung',
+            'text' => 'Zeiten für Tätigkeiten',
             'url'  => 'zeiterfassung/',
             'icon' => 'fas fa-fw fa-clock',
         ],
@@ -278,7 +277,6 @@ return [
                 ],
             ],
         ],
-        ['header' => 'labels'],
 
     ],
 

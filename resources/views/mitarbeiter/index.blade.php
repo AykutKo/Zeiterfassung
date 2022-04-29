@@ -33,6 +33,8 @@
                                         <th class="wd-25p border-bottom-0 text-center">Stadt</th>
                                         <th class="wd-20p border-bottom-0">E-Mail Adresse</th>
                                         <th class="wd-20p border-bottom-0">Telefonnummer</th>
+                                        <th class="wd-20p border-bottom-0">Rest Urlaubstage</th>
+                                        <th class="wd-20p border-bottom-0">Krankheitstage</th>
                                         <th class="wd-25p border-bottom-0 text-center">Aktion</th>
                                     </tr>
                                     </thead>
@@ -48,6 +50,8 @@
                                             <td>{{ $mitarbeiter->city }}</td>
                                             <td>{{ $mitarbeiter->email }}</td>
                                             <td>{{ $mitarbeiter->phone }}</td>
+                                            <td>{{ $mitarbeiter->urlaubstage }}</td>
+                                            <td>{{ $mitarbeiter->krankheitstage }}</td>
                                             <td class="text-center">
                                                 <div class="btn-group">
                                                     <a href="{{ route('mitarbeiter.edit', $mitarbeiter) }}" class="btn btn-sm btn-warning"><i class="fa fa-pencil-alt"></i></a>
